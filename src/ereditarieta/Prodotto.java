@@ -1,6 +1,7 @@
 package ereditarieta;
 
 public class Prodotto {
+
     protected String descrizione;
     protected int quantita;
     protected float prezzo;
@@ -10,6 +11,7 @@ public class Prodotto {
             this.quantita+=quantita;
         }
     }
+
     public boolean vendi(){
         if (quantita>0){
             quantita--;
@@ -24,7 +26,18 @@ public class Prodotto {
     public boolean equals(Object o){
         if (o instanceof Prodotto){
             Prodotto p = (Prodotto) o;
-            if ()
+            if (p.descrizione.equals(this.descrizione)&&p.quantita==this.quantita&&p.prezzo==this.prezzo){
+                return true;
+            }
         }
+        return false;
+    }
+
+    public Prodotto(){}
+
+    public Prodotto(String descrizione, int quantita, float prezzo){
+        this.descrizione=descrizione;
+        this.prezzo=prezzo;
+        this.quantita=quantita;
     }
 }
